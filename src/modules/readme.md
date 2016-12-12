@@ -1,0 +1,1 @@
+This is an abstraction layer that might hide an implementation on another target.
