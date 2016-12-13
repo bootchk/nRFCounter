@@ -13,9 +13,7 @@
 
 
 
-#include "modules/longClockTimer.h"
-
-
+#include <modules/nRFCounter.h>
 #include "SEGGER_RTT.h"
 
 

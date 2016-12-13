@@ -1,7 +1,7 @@
 
 #include <cassert>
 #include <inttypes.h>
-#include "longClockTimer.h"
+#include <modules/nRFCounter.h>
 #include "../drivers/lowFrequencyClock.h"
 #include "../drivers/counter.h"
 #include "../drivers/compareRegister.h"
