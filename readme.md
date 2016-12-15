@@ -3,6 +3,8 @@ A thin wrapper around the RTC peripheral of the Nordic nRF5x family of embedded 
 
 Object oriented (C++)
 
+The same but improved code is also contained in nRF5x library project.
+
 Provides
 -
 LongClock 56-bit clock with resolution of 30uSec.  
@@ -15,13 +17,12 @@ The LongClock cannot be stopped (the mcu can be paused, but the RTC device alway
 
 Motivation
 -
-
-    - Nordic's app_timer library is of unknown quality and is overweight for many use cases.  
-    - Nordic's drivers are general purpose, not well explained, and overweight for many use cases.
+    - Nordic's app_timer library is of unknown quality
+    - Nordic's drivers are general purpose, not well explained
+    - both are overweight for many use cases.
 
 Simplifications
 -
-
     - LongClock always runs and can't be stopped
     - the used peripheral is hard coded (RTC0, could use RTC1, etc.)
     - each Timer uses one of the compare registers of the RTC0 peripheral
@@ -34,13 +35,13 @@ Uses HAL, not nrf_drv: probably less robust, but easier to understand.  In other
 
 Uses the 32-kHz xtal clock source, so is as accurate as most quartz hand watches.
 
-The "RTC" acronym for the peripheral is misguided.  It is a counter, but "RTC" usually means "real time clock".  
-Here I will use *RTCounter* to mean the peripheral.
+The "RTC" acronym for the peripheral is misguided.  It is a counter, but "RTC" usually means "real time clock" that keeps accurate wall time, providing seconds and calendar. Here the library provides something closer to a real time clock, and timers.
+
 
 Building
 -
 
-The artifact is a library cross-compiled for ARM.
+The artifacts are libraries cross-compiled for targets nRF51 and nRF52 (ARM M0 and M4.)
 
 This is an eclipse project, using Eclipse's build system
 
@@ -51,6 +52,10 @@ You will need to modify the paths in the project's Properties>C/C++Build>Setting
 
 See Also
 -
-A companion project is testCounter.
+A companion project is testnRFCounter.
 
-A using project is nRFrawProtocol and sleepSyncAgent.
+A using project will be nRFrawProtocol and sleepSyncAgent.
+
+TODO
+-
+Make the project less specific to my dev system.
